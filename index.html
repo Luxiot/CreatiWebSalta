@@ -932,30 +932,30 @@
         WhatsApp
     </a>
 
-    <!-- Chatbot Premium con IA Avanzada -->
+    <!-- Chatbot Premium con IA Avanzada - Versión Móvil Optimizada -->
     <div id="chatbot-float" style="
         position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 80px;
-        height: 80px;
+        bottom: 15px;
+        right: 15px;
+        width: 60px;
+        height: 60px;
         background: linear-gradient(135deg, #667eea, #764ba2);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         z-index: 9999;
         transition: all 0.4s ease;
         color: white;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 10px;
         animation: float 3s ease-in-out infinite;
     " onclick="toggleChatbot()">
         <div style="
-            width: 60px;
-            height: 60px;
+            width: 45px;
+            height: 45px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
@@ -963,31 +963,31 @@
             justify-content: center;
             backdrop-filter: blur(10px);
         ">
-            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Bot" style="width: 25px; height: 25px; filter: brightness(0) invert(1);">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Bot" style="width: 20px; height: 20px; filter: brightness(0) invert(1);">
         </div>
         <div style="
             position: absolute;
-            top: -5px;
-            right: -5px;
-            width: 20px;
-            height: 20px;
+            top: -3px;
+            right: -3px;
+            width: 16px;
+            height: 16px;
             background: #25d366;
             border-radius: 50%;
-            border: 3px solid white;
+            border: 2px solid white;
             animation: pulse 2s infinite;
         "></div>
     </div>
 
     <div id="chatbot-container" style="
         position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 420px;
-        height: 600px;
+        bottom: 15px;
+        right: 15px;
+        width: 350px;
+        height: 500px;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(25px);
-        border-radius: 25px;
-        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         z-index: 10000;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         overflow: hidden;
@@ -999,16 +999,16 @@
         <div style="
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 20px 25px;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             position: relative;
             overflow: hidden;
         ">
             <div style="
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 background: rgba(255, 255, 255, 0.2);
                 border-radius: 50%;
                 display: flex;
@@ -1017,13 +1017,13 @@
                 backdrop-filter: blur(10px);
                 border: 2px solid rgba(255, 255, 255, 0.3);
             ">
-                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Bot" style="width: 25px; height: 25px; filter: brightness(0) invert(1);">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Bot" style="width: 20px; height: 20px; filter: brightness(0) invert(1);">
             </div>
             <div>
-                <h4 style="margin: 0; font-size: 18px; font-weight: 600;">CreatiWeb AI Assistant</h4>
-                <p style="margin: 0; font-size: 13px; opacity: 0.9; display: flex; align-items: center; gap: 5px;">
-                    <span style="width: 8px; height: 8px; background: #25d366; border-radius: 50%; animation: pulse 2s infinite;"></span>
-                    AI Online - Asistente Inteligente
+                <h4 style="margin: 0; font-size: 16px; font-weight: 600;">CreatiWeb AI</h4>
+                <p style="margin: 0; font-size: 12px; opacity: 0.9; display: flex; align-items: center; gap: 5px;">
+                    <span style="width: 6px; height: 6px; background: #25d366; border-radius: 50%; animation: pulse 2s infinite;"></span>
+                    Asistente Inteligente
                 </p>
             </div>
             <button onclick="toggleChatbot()" style="
@@ -1031,9 +1031,9 @@
                 background: rgba(255, 255, 255, 0.2);
                 border: none;
                 color: white;
-                font-size: 18px;
+                font-size: 16px;
                 cursor: pointer;
-                padding: 8px;
+                padding: 6px;
                 border-radius: 50%;
                 transition: all 0.3s ease;
                 backdrop-filter: blur(10px);
@@ -1044,8 +1044,8 @@
                 position: absolute;
                 top: -50%;
                 right: -50%;
-                width: 200px;
-                height: 200px;
+                width: 150px;
+                height: 150px;
                 background: rgba(255, 255, 255, 0.1);
                 border-radius: 50%;
                 animation: rotate 20s linear infinite;
@@ -1055,9 +1055,9 @@
         <!-- Área de mensajes -->
         <div id="chat-messages" style="
             flex: 1;
-            padding: 25px;
+            padding: 20px;
             overflow-y: auto;
-            max-height: 450px;
+            max-height: 350px;
             background: linear-gradient(180deg, #fafbfc 0%, #f5f7fa 100%);
         ">
             <!-- Los mensajes se generarán dinámicamente -->
@@ -1065,18 +1065,18 @@
 
         <!-- Input premium -->
         <div style="
-            padding: 20px 25px;
+            padding: 15px 20px;
             border-top: 1px solid rgba(0, 0, 0, 0.08);
             background: white;
             display: flex;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
         ">
             <div style="
                 flex: 1;
                 position: relative;
                 background: #f8f9fa;
-                border-radius: 25px;
+                border-radius: 20px;
                 border: 2px solid transparent;
                 transition: all 0.3s ease;
             " id="input-container">
@@ -1084,8 +1084,8 @@
                     width: 100%;
                     border: none;
                     background: transparent;
-                    padding: 15px 20px;
-                    font-size: 14px;
+                    padding: 12px 16px;
+                    font-size: 13px;
                     outline: none;
                     color: #333;
                 ">
@@ -1094,13 +1094,13 @@
                 background: linear-gradient(135deg, #667eea, #764ba2);
                 border: none;
                 color: white;
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 border-radius: 50%;
                 cursor: pointer;
-                font-size: 18px;
+                font-size: 16px;
                 transition: all 0.3s ease;
-                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
             " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📤</button>
         </div>
     </div>
@@ -1108,7 +1108,7 @@
     <style>
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
         
         @keyframes pulse {
@@ -1117,7 +1117,7 @@
         }
         
         @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
+            from { transform: translateY(15px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
         
@@ -1127,7 +1127,7 @@
         }
         
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
@@ -1138,17 +1138,17 @@
         
         .typing-indicator {
             display: flex;
-            gap: 5px;
-            padding: 15px 20px;
+            gap: 4px;
+            padding: 12px 16px;
             background: #f0f2f5;
-            border-radius: 20px;
+            border-radius: 18px;
             width: fit-content;
-            margin: 10px 0;
+            margin: 8px 0;
         }
         
         .typing-dot {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: #667eea;
             border-radius: 50%;
             animation: typing 1.4s infinite;
@@ -1161,14 +1161,14 @@
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
             border: 1px solid rgba(102, 126, 234, 0.2);
             color: #667eea;
-            padding: 12px 18px;
-            border-radius: 25px;
-            font-size: 13px;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
             text-align: left;
-            margin: 5px 0;
+            margin: 4px 0;
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
@@ -1192,15 +1192,15 @@
         .message-option:hover {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
         }
         
         .progress-bar {
             width: 100%;
-            height: 4px;
+            height: 3px;
             background: rgba(102, 126, 234, 0.1);
             border-radius: 2px;
-            margin: 15px 0;
+            margin: 12px 0;
             overflow: hidden;
         }
         
@@ -1214,70 +1214,135 @@
         
         .summary-card {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 20px;
-            padding: 25px;
-            margin: 20px 0;
+            border-radius: 18px;
+            padding: 20px;
+            margin: 15px 0;
             border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
         }
         
         .summary-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin: 12px 0;
-            padding: 10px;
+            gap: 10px;
+            margin: 10px 0;
+            padding: 8px;
             background: white;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            border-left: 3px solid #667eea;
         }
         
         .summary-icon {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
         }
         
         .whatsapp-button {
             background: linear-gradient(135deg, #25d366, #128c7e);
             border: none;
             color: white;
-            padding: 18px 35px;
-            border-radius: 30px;
-            font-size: 16px;
+            padding: 15px 28px;
+            border-radius: 25px;
+            font-size: 15px;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.3);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin: 20px auto;
+            gap: 8px;
+            margin: 15px auto;
         }
         
         .whatsapp-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
         }
         
         .ai-thinking {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 15px 20px;
-            border-radius: 20px;
-            font-size: 13px;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 12px;
             font-style: italic;
             opacity: 0.9;
-            margin: 10px 0;
+            margin: 8px 0;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+        }
+        
+        /* Responsive para móviles */
+        @media (max-width: 480px) {
+            #chatbot-container {
+                width: 320px;
+                height: 450px;
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                margin: 0 auto;
+            }
+            
+            #chatbot-float {
+                bottom: 10px;
+                right: 10px;
+                width: 55px;
+                height: 55px;
+            }
+            
+            #chatbot-float > div:first-child {
+                width: 40px;
+                height: 40px;
+            }
+            
+            #chatbot-float img {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .message-option {
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+            
+            .summary-card {
+                padding: 15px;
+            }
+            
+            .summary-item {
+                padding: 6px;
+            }
+            
+            .summary-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            #chatbot-container {
+                width: 300px;
+                height: 420px;
+            }
+            
+            #chat-messages {
+                padding: 15px;
+                max-height: 300px;
+            }
+            
+            .whatsapp-button {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
         }
     </style>
 
