@@ -932,197 +932,492 @@
         WhatsApp
     </a>
 
-    <!-- Chatbot Simple y Directo -->
+    <!-- Chatbot Premium con IA Avanzada -->
     <div id="chatbot-float" style="
         position: fixed;
         bottom: 20px;
         right: 20px;
         width: 80px;
-        height: 60px;
+        height: 80px;
         background: linear-gradient(135deg, #667eea, #764ba2);
-        border-radius: 30px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
         z-index: 9999;
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
         color: white;
         font-weight: bold;
         font-size: 12px;
+        animation: float 3s ease-in-out infinite;
     " onclick="toggleChatbot()">
-        CreatiWebBot
+        <div style="
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        ">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Bot" style="width: 25px; height: 25px; filter: brightness(0) invert(1);">
+        </div>
+        <div style="
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: #25d366;
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: pulse 2s infinite;
+        "></div>
     </div>
 
     <div id="chatbot-container" style="
         position: fixed;
         bottom: 20px;
         right: 20px;
-        width: 350px;
-        height: 500px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        width: 420px;
+        height: 600px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(25px);
+        border-radius: 25px;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
         z-index: 10000;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         overflow: hidden;
         display: none;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        animation: slideIn 0.4s ease-out;
     ">
+        <!-- Header Premium -->
         <div style="
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 15px 20px;
+            padding: 20px 25px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
         ">
-                         <div style="
-                 width: 40px;
-                 height: 40px;
-                 background: rgba(255, 255, 255, 0.2);
-                 border-radius: 50%;
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-             ">
-                 <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Robot" style="width: 20px; height: 20px; filter: brightness(0) invert(1);">
-             </div>
+            <div style="
+                width: 50px;
+                height: 50px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            ">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Bot" style="width: 25px; height: 25px; filter: brightness(0) invert(1);">
+            </div>
             <div>
-                <h4 style="margin: 0; font-size: 16px; font-weight: 600;">CreatiWebBot</h4>
-                <p style="margin: 0; font-size: 12px; opacity: 0.8;">Asistente Virtual</p>
+                <h4 style="margin: 0; font-size: 18px; font-weight: 600;">CreatiWeb AI Assistant</h4>
+                <p style="margin: 0; font-size: 13px; opacity: 0.9; display: flex; align-items: center; gap: 5px;">
+                    <span style="width: 8px; height: 8px; background: #25d366; border-radius: 50%; animation: pulse 2s infinite;"></span>
+                    AI Online - Asistente Inteligente
+                </p>
             </div>
             <button onclick="toggleChatbot()" style="
                 margin-left: auto;
-                background: none;
+                background: rgba(255, 255, 255, 0.2);
                 border: none;
                 color: white;
                 font-size: 18px;
                 cursor: pointer;
-                padding: 5px;
+                padding: 8px;
                 border-radius: 50%;
-            ">✕</button>
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+            " onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">✕</button>
+            
+            <!-- Elementos decorativos -->
+            <div style="
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                width: 200px;
+                height: 200px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                animation: rotate 20s linear infinite;
+            "></div>
         </div>
 
+        <!-- Área de mensajes -->
         <div id="chat-messages" style="
             flex: 1;
-            padding: 20px;
+            padding: 25px;
             overflow-y: auto;
-            max-height: 350px;
+            max-height: 450px;
+            background: linear-gradient(180deg, #fafbfc 0%, #f5f7fa 100%);
         ">
-            <div style="
-                margin-bottom: 15px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            ">
-                <div style="
-                    max-width: 80%;
-                    padding: 12px 16px;
-                    border-radius: 18px;
-                    font-size: 14px;
-                    line-height: 1.4;
-                    background: #f0f2f5;
-                    color: #1c1e21;
-                ">
-                    <p>¡Hola! Soy CreatiWebBot, tu asistente virtual para desarrollo web. ¿En qué puedo ayudarte hoy?</p>
-                    <div style="
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 8px;
-                        margin-top: 12px;
-                    ">
-                        <button onclick="handleQuickOption('servicios')" style="
-                            background: rgba(102, 126, 234, 0.1);
-                            border: 1px solid rgba(102, 126, 234, 0.3);
-                            color: #667eea;
-                            padding: 8px 12px;
-                            border-radius: 20px;
-                            font-size: 12px;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                            font-weight: 500;
-                        ">📋 Ver Servicios</button>
-                        <button onclick="handleQuickOption('precios')" style="
-                            background: rgba(102, 126, 234, 0.1);
-                            border: 1px solid rgba(102, 126, 234, 0.3);
-                            color: #667eea;
-                            padding: 8px 12px;
-                            border-radius: 20px;
-                            font-size: 12px;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                            font-weight: 500;
-                        ">💰 Consultar Precios</button>
-                        <button onclick="handleQuickOption('portfolio')" style="
-                            background: rgba(102, 126, 234, 0.1);
-                            border: 1px solid rgba(102, 126, 234, 0.3);
-                            color: #667eea;
-                            padding: 8px 12px;
-                            border-radius: 20px;
-                            font-size: 12px;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                            font-weight: 500;
-                        ">🎨 Ver Portfolio</button>
-                                                 <button onclick="handleQuickOption('contacto')" style="
-                             background: rgba(102, 126, 234, 0.1);
-                             border: 1px solid rgba(102, 126, 234, 0.3);
-                             color: #667eea;
-                             padding: 8px 12px;
-                             border-radius: 20px;
-                             font-size: 12px;
-                             cursor: pointer;
-                             transition: all 0.3s ease;
-                             font-weight: 500;
-                         ">📞 Contacto</button>
-                         <button onclick="handleQuickOption('reunion')" style="
-                             background: rgba(102, 126, 234, 0.1);
-                             border: 1px solid rgba(102, 126, 234, 0.3);
-                             color: #667eea;
-                             padding: 8px 12px;
-                             border-radius: 20px;
-                             font-size: 12px;
-                             cursor: pointer;
-                             transition: all 0.3s ease;
-                             font-weight: 500;
-                         ">📅 Planificación</button>
-                    </div>
-                </div>
-            </div>
+            <!-- Los mensajes se generarán dinámicamente -->
         </div>
 
+        <!-- Input premium -->
         <div style="
-            padding: 15px 20px;
-            border-top: 1px solid #e4e6ea;
+            padding: 20px 25px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            background: white;
             display: flex;
-            gap: 10px;
+            gap: 12px;
             align-items: center;
         ">
-            <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." maxlength="200" style="
+            <div style="
                 flex: 1;
-                border: 1px solid #e4e6ea;
-                border-radius: 20px;
-                padding: 10px 15px;
-                font-size: 14px;
-                outline: none;
-            ">
+                position: relative;
+                background: #f8f9fa;
+                border-radius: 25px;
+                border: 2px solid transparent;
+                transition: all 0.3s ease;
+            " id="input-container">
+                <input type="text" id="chat-input" placeholder="Escribe tu respuesta..." maxlength="300" style="
+                    width: 100%;
+                    border: none;
+                    background: transparent;
+                    padding: 15px 20px;
+                    font-size: 14px;
+                    outline: none;
+                    color: #333;
+                ">
+            </div>
             <button onclick="sendMessage()" style="
                 background: linear-gradient(135deg, #667eea, #764ba2);
                 border: none;
                 color: white;
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
                 border-radius: 50%;
                 cursor: pointer;
-                font-size: 16px;
-            ">📤</button>
+                font-size: 18px;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📤</button>
         </div>
     </div>
 
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes typing {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+            padding: 15px 20px;
+            background: #f0f2f5;
+            border-radius: 20px;
+            width: fit-content;
+            margin: 10px 0;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        .message-option {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-align: left;
+            margin: 5px 0;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .message-option:hover::before {
+            left: 100%;
+        }
+        
+        .message-option:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 2px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .summary-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .summary-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .whatsapp-button {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border: none;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px auto;
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+        }
+        
+        .ai-thinking {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+
     <script>
-        // Funciones del chatbot
+        // Estado avanzado del chatbot con IA
+        let chatbotState = {
+            step: 0,
+            userData: {},
+            conversationFlow: [
+                {
+                    id: 'greeting',
+                    question: "¡Hola! 👋 Soy tu asistente de IA especializado en desarrollo web. Estoy aquí para ayudarte a crear el proyecto perfecto para tu negocio. ¿Podrías decirme tu nombre?",
+                    field: "nombre",
+                    type: "text",
+                    aiThinking: "Analizando perfil del usuario...",
+                    nextStep: 'business_type'
+                },
+                {
+                    id: 'business_type',
+                    question: "¡Perfecto, {nombre}! 😊 Ahora necesito entender mejor tu negocio. ¿En qué industria o sector te desempeñas?",
+                    field: "industria",
+                    type: "options",
+                    options: [
+                        "🏢 Empresa/Corporación",
+                        "🏪 Comercio minorista",
+                        "🍽️ Restaurante/Gastronomía",
+                        "🏥 Salud/Medicina",
+                        "🎓 Educación/Formación",
+                        "💼 Servicios profesionales",
+                        "🏗️ Construcción/Inmobiliaria",
+                        "🚗 Automotriz/Transporte",
+                        "💻 Tecnología/Software",
+                        "🎨 Arte/Cultura/Entretenimiento",
+                        "🏃 Deportes/Bienestar",
+                        "🌱 Otro sector"
+                    ],
+                    aiThinking: "Evaluando necesidades específicas del sector...",
+                    nextStep: 'project_type'
+                },
+                {
+                    id: 'project_type',
+                    question: "Excelente elección. Basándome en tu industria, ¿qué tipo de proyecto web necesitas específicamente?",
+                    field: "tipoProyecto",
+                    type: "options",
+                    options: [
+                        "🌐 Sitio web corporativo informativo",
+                        "🛒 Tienda online completa (E-commerce)",
+                        "📱 Aplicación web progresiva (PWA)",
+                        "🏢 Portal empresarial con panel admin",
+                        "📚 Plataforma de cursos online",
+                        "🏥 Sistema de gestión médica",
+                        "🍽️ Sistema de reservas y pedidos",
+                        "📊 Dashboard de análisis y reportes",
+                        "🔐 Intranet corporativa",
+                        "🌍 Sitio multilingüe",
+                        "❓ Necesito asesoramiento personalizado"
+                    ],
+                    aiThinking: "Analizando complejidad técnica del proyecto...",
+                    nextStep: 'budget_range'
+                },
+                {
+                    id: 'budget_range',
+                    question: "Perfecto. Para este tipo de proyecto, ¿cuál es tu rango de presupuesto disponible? Esto me ayudará a optimizar la solución.",
+                    field: "presupuesto",
+                    type: "options",
+                    options: [
+                        "💰 Hasta $150.000 (Proyecto básico)",
+                        "💰 $150.000 - $250.000 (Proyecto estándar)",
+                        "💰 $250.000 - $400.000 (Proyecto avanzado)",
+                        "💰 $400.000 - $600.000 (Proyecto premium)",
+                        "💰 Más de $600.000 (Solución empresarial)",
+                        "❓ Necesito que evalúes mi proyecto"
+                    ],
+                    aiThinking: "Calculando ROI y viabilidad del proyecto...",
+                    nextStep: 'timeline'
+                },
+                {
+                    id: 'timeline',
+                    question: "Entiendo tu presupuesto. ¿En qué plazo necesitas que esté listo el proyecto?",
+                    field: "plazo",
+                    type: "options",
+                    options: [
+                        "⚡ Urgente (2-3 semanas) - Desarrollo acelerado",
+                        "🚀 Rápido (1 mes) - Desarrollo estándar",
+                        "📅 Normal (2-3 meses) - Desarrollo optimizado",
+                        "🕐 Flexible (3-6 meses) - Desarrollo detallado",
+                        "🎯 Personalizado - Según complejidad"
+                    ],
+                    aiThinking: "Evaluando cronograma y recursos necesarios...",
+                    nextStep: 'features'
+                },
+                {
+                    id: 'features',
+                    question: "Excelente. Ahora necesito saber qué funcionalidades específicas necesitas. ¿Cuáles de estas características son importantes para tu proyecto?",
+                    field: "funcionalidades",
+                    type: "multi_select",
+                    options: [
+                        "📱 Diseño responsive (móvil, tablet, desktop)",
+                        "🔍 SEO optimizado para buscadores",
+                        "📊 Panel administrativo personalizado",
+                        "💳 Integración con sistemas de pago",
+                        "📧 Sistema de notificaciones por email",
+                        "🔐 Sistema de usuarios y autenticación",
+                        "📈 Analytics y reportes avanzados",
+                        "🌐 Integración con redes sociales",
+                        "📱 Aplicación móvil nativa",
+                        "☁️ Hosting y mantenimiento incluido",
+                        "🔒 Certificado SSL y seguridad avanzada",
+                        "📞 Chat en vivo y soporte 24/7"
+                    ],
+                    aiThinking: "Analizando arquitectura técnica requerida...",
+                    nextStep: 'description'
+                },
+                {
+                    id: 'description',
+                    question: "¡Muy bien! Ahora cuéntame más detalles sobre tu proyecto. ¿Tienes alguna idea específica, referencias de otros sitios que te gusten, o requisitos particulares?",
+                    field: "descripcion",
+                    type: "text_long",
+                    aiThinking: "Procesando información para crear propuesta personalizada...",
+                    nextStep: 'contact_preference'
+                },
+                {
+                    id: 'contact_preference',
+                    question: "¡Perfecto! He recopilado toda la información necesaria. Ahora puedo crear una propuesta personalizada para tu proyecto. ¿Te gustaría que continuemos por WhatsApp para agendar una reunión de planificación gratuita donde te explicaré todo en detalle?",
+                    field: "confirmacion",
+                    type: "options",
+                    options: [
+                        "✅ Sí, agendar reunión gratuita por WhatsApp",
+                        "📧 Prefiero que me contactes por email",
+                        "📞 Me gustaría una llamada telefónica",
+                        "❌ No, gracias por ahora"
+                    ],
+                    aiThinking: "Preparando resumen ejecutivo del proyecto...",
+                    nextStep: 'summary'
+                }
+            ],
+            selectedFeatures: []
+        };
+
+        // Funciones del chatbot premium
         function toggleChatbot() {
             const container = document.getElementById('chatbot-container');
             const float = document.getElementById('chatbot-float');
@@ -1130,11 +1425,164 @@
             if (container.style.display === 'none' || container.style.display === '') {
                 container.style.display = 'block';
                 float.style.display = 'none';
+                startConversation();
                 document.getElementById('chat-input').focus();
             } else {
                 container.style.display = 'none';
                 float.style.display = 'flex';
             }
+        }
+
+        function startConversation() {
+            const messagesContainer = document.getElementById('chat-messages');
+            messagesContainer.innerHTML = '';
+            
+            // Reiniciar estado
+            chatbotState.step = 0;
+            chatbotState.userData = {};
+            chatbotState.selectedFeatures = [];
+            
+            // Mostrar primera pregunta
+            setTimeout(() => {
+                askQuestion();
+            }, 500);
+        }
+
+        function askQuestion() {
+            const currentStep = chatbotState.conversationFlow[chatbotState.step];
+            let question = currentStep.question;
+            
+            // Reemplazar variables en la pregunta
+            if (currentStep.field === 'business_type' && chatbotState.userData.nombre) {
+                question = question.replace('{nombre}', chatbotState.userData.nombre);
+            }
+            
+            // Mostrar indicador de IA pensando
+            showAIThinking(currentStep.aiThinking);
+            
+            // Mostrar la pregunta después de un delay
+            setTimeout(() => {
+                addMessage(question, 'bot');
+                
+                // Si es de opciones, mostrar botones
+                if (currentStep.type === 'options') {
+                    showOptions(currentStep.options);
+                } else if (currentStep.type === 'multi_select') {
+                    showMultiSelectOptions(currentStep.options);
+                }
+                
+                // Mostrar barra de progreso
+                showProgressBar();
+            }, 2000);
+        }
+
+        function showAIThinking(message) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const thinkingDiv = document.createElement('div');
+            thinkingDiv.className = 'ai-thinking';
+            thinkingDiv.innerHTML = `
+                <span style="width: 8px; height: 8px; background: white; border-radius: 50%; animation: pulse 2s infinite;"></span>
+                ${message}
+            `;
+            
+            messagesContainer.appendChild(thinkingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showProgressBar() {
+            const messagesContainer = document.getElementById('chat-messages');
+            const progressDiv = document.createElement('div');
+            progressDiv.className = 'progress-bar';
+            progressDiv.innerHTML = '<div class="progress-fill"></div>';
+            
+            messagesContainer.appendChild(progressDiv);
+            
+            // Animar la barra de progreso
+            setTimeout(() => {
+                const progressFill = progressDiv.querySelector('.progress-fill');
+                const progress = ((chatbotState.step + 1) / chatbotState.conversationFlow.length) * 100;
+                progressFill.style.width = progress + '%';
+            }, 100);
+            
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showOptions(options) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const optionsDiv = document.createElement('div');
+            optionsDiv.style.cssText = `
+                margin: 15px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            `;
+            
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.className = 'message-option';
+                button.onclick = () => handleOptionSelection(option);
+                optionsDiv.appendChild(button);
+            });
+            
+            messagesContainer.appendChild(optionsDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showMultiSelectOptions(options) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const optionsDiv = document.createElement('div');
+            optionsDiv.style.cssText = `
+                margin: 15px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            `;
+            
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.className = 'message-option';
+                button.onclick = () => handleMultiSelectOption(option);
+                optionsDiv.appendChild(button);
+            });
+            
+            // Botón para continuar
+            const continueButton = document.createElement('button');
+            continueButton.textContent = '✅ Continuar con las funcionalidades seleccionadas';
+            continueButton.className = 'message-option';
+            continueButton.style.background = 'linear-gradient(135deg, #25d366, #128c7e)';
+            continueButton.style.color = 'white';
+            continueButton.onclick = () => nextStep();
+            optionsDiv.appendChild(continueButton);
+            
+            messagesContainer.appendChild(optionsDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function handleOptionSelection(option) {
+            const currentStep = chatbotState.conversationFlow[chatbotState.step];
+            chatbotState.userData[currentStep.field] = option;
+            
+            // Mostrar la selección del usuario
+            addMessage(option, 'user');
+            
+            // Avanzar al siguiente paso
+            nextStep();
+        }
+
+        function handleMultiSelectOption(option) {
+            if (!chatbotState.selectedFeatures.includes(option)) {
+                chatbotState.selectedFeatures.push(option);
+            } else {
+                chatbotState.selectedFeatures = chatbotState.selectedFeatures.filter(f => f !== option);
+            }
+            
+            // Actualizar visual del botón
+            event.target.style.background = chatbotState.selectedFeatures.includes(option) 
+                ? 'linear-gradient(135deg, #25d366, #128c7e)' 
+                : 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))';
+            event.target.style.color = chatbotState.selectedFeatures.includes(option) ? 'white' : '#667eea';
         }
 
         function sendMessage() {
@@ -1143,34 +1591,184 @@
             
             if (!message) return;
             
+            const currentStep = chatbotState.conversationFlow[chatbotState.step];
+            
+            // Guardar respuesta del usuario
+            if (currentStep.type === 'multi_select') {
+                chatbotState.userData[currentStep.field] = chatbotState.selectedFeatures;
+            } else {
+                chatbotState.userData[currentStep.field] = message;
+            }
+            
+            // Mostrar mensaje del usuario
             addMessage(message, 'user');
             input.value = '';
             
+            // Avanzar al siguiente paso
             setTimeout(() => {
-                let response = generateResponse(message.toLowerCase());
-                addMessage(response, 'bot');
-            }, 500);
+                nextStep();
+            }, 800);
+        }
+
+        function nextStep() {
+            chatbotState.step++;
+            
+            if (chatbotState.step < chatbotState.conversationFlow.length) {
+                setTimeout(() => {
+                    askQuestion();
+                }, 1000);
+            } else {
+                // Conversación completada
+                setTimeout(() => {
+                    showAdvancedSummary();
+                }, 1000);
+            }
+        }
+
+        function showAdvancedSummary() {
+            const summary = `
+                <div class="summary-card">
+                    <h4 style="margin: 0 0 20px 0; color: #667eea; font-size: 18px; text-align: center;">
+                        🎯 <strong>ANÁLISIS COMPLETO DE TU PROYECTO</strong>
+                    </h4>
+                    
+                    <div class="summary-item">
+                        <div class="summary-icon">👤</div>
+                        <div>
+                            <strong>Cliente:</strong> ${chatbotState.userData.nombre}
+                        </div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-icon">🏢</div>
+                        <div>
+                            <strong>Sector:</strong> ${chatbotState.userData.industria}
+                        </div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-icon">🌐</div>
+                        <div>
+                            <strong>Tipo de Proyecto:</strong> ${chatbotState.userData.tipoProyecto}
+                        </div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-icon">💰</div>
+                        <div>
+                            <strong>Presupuesto:</strong> ${chatbotState.userData.presupuesto}
+                        </div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-icon">⏰</div>
+                        <div>
+                            <strong>Plazo:</strong> ${chatbotState.userData.plazo}
+                        </div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-icon">⚙️</div>
+                        <div>
+                            <strong>Funcionalidades Seleccionadas:</strong><br>
+                            ${chatbotState.userData.funcionalidades ? chatbotState.userData.funcionalidades.map(f => `• ${f}`).join('<br>') : 'No especificadas'}
+                        </div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-icon">📝</div>
+                        <div>
+                            <strong>Descripción:</strong> ${chatbotState.userData.descripcion || 'No especificada'}
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin: 25px 0;">
+                    <p style="font-size: 15px; color: #666; margin-bottom: 20px;">
+                        <strong>🎉 ¡Excelente! He analizado tu proyecto y estoy listo para crear una propuesta personalizada.</strong>
+                    </p>
+                    
+                    <p style="font-size: 14px; color: #777; line-height: 1.6;">
+                        En la reunión de planificación gratuita te explicaré:<br>
+                        • <strong>Arquitectura técnica</strong> recomendada para tu proyecto<br>
+                        • <strong>Cronograma detallado</strong> de desarrollo<br>
+                        • <strong>Presupuesto exacto</strong> basado en tus necesidades<br>
+                        • <strong>Plan de implementación</strong> paso a paso
+                    </p>
+                </div>
+                
+                <button onclick="redirectToWhatsApp()" class="whatsapp-button">
+                    📱 <span>Agendar Reunión Gratuita por WhatsApp</span>
+                </button>
+                
+                <p style="font-size: 12px; color: #999; text-align: center; margin-top: 15px;">
+                    ⏰ <strong>Duración estimada:</strong> 45-60 minutos | 💰 <strong>Costo:</strong> Completamente gratuito
+                </p>
+            `;
+            
+            addMessage(summary, 'bot');
+        }
+
+        function redirectToWhatsApp() {
+            const userData = chatbotState.userData;
+            
+            // Crear mensaje profesional para WhatsApp
+            const message = `🚀 **NUEVA CONSULTA DE PROYECTO WEB - CreatiWebSalta**
+
+👤 **Cliente:** ${userData.nombre}
+🏢 **Sector:** ${userData.industria}
+🌐 **Tipo de Proyecto:** ${userData.tipoProyecto}
+💰 **Presupuesto:** ${userData.presupuesto}
+⏰ **Plazo:** ${userData.plazo}
+
+⚙️ **Funcionalidades Requeridas:**
+${userData.funcionalidades ? userData.funcionalidades.map(f => `• ${f}`).join('\n') : '• No especificadas'}
+
+📝 **Descripción del Proyecto:**
+${userData.descripcion || 'No especificada'}
+
+🎯 **Solicitud:** Agendar reunión de planificación gratuita para discutir el proyecto en detalle y crear propuesta personalizada.
+
+📱 **Contacto:** ${userData.nombre}
+⏰ **Disponibilidad:** A coordinar según tu agenda
+
+---
+*Mensaje generado automáticamente por CreatiWeb AI Assistant*
+*Análisis técnico completado - Listo para reunión de planificación*`;
+
+            // Codificar el mensaje para la URL de WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/543874848712?text=${encodedMessage}`;
+            
+            // Abrir WhatsApp en nueva pestaña
+            window.open(whatsappUrl, '_blank');
+            
+            // Cerrar el chatbot
+            toggleChatbot();
         }
 
         function addMessage(content, sender) {
             const messagesContainer = document.getElementById('chat-messages');
             const messageDiv = document.createElement('div');
             messageDiv.style.cssText = `
-                margin-bottom: 15px;
+                margin-bottom: 20px;
                 display: flex;
                 flex-direction: column;
                 align-items: ${sender === 'bot' ? 'flex-start' : 'flex-end'};
+                animation: fadeInUp 0.5s ease-out;
             `;
             
             const messageContent = document.createElement('div');
             messageContent.style.cssText = `
-                max-width: 80%;
-                padding: 12px 16px;
-                border-radius: 18px;
+                max-width: 90%;
+                padding: 15px 20px;
+                border-radius: 20px;
                 font-size: 14px;
-                line-height: 1.4;
-                background: ${sender === 'bot' ? '#f0f2f5' : 'linear-gradient(135deg, #667eea, #764ba2)'};
-                color: ${sender === 'bot' ? '#1c1e21' : 'white'};
+                line-height: 1.5;
+                background: ${sender === 'bot' ? 'white' : 'linear-gradient(135deg, #667eea, #764ba2)'};
+                color: ${sender === 'bot' ? '#333' : 'white'};
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                border: ${sender === 'bot' ? '1px solid rgba(0, 0, 0, 0.05)' : 'none'};
             `;
             
             if (sender === 'bot') {
@@ -1184,148 +1782,23 @@
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
-        function generateResponse(message) {
-            if (message.includes('servicio') || message.includes('que haces') || message.includes('tipos de desarrollo') || message.includes('clases de web')) {
-                return `
-                    <p><strong>🎯 Tipos de Desarrollo Web que Ofrezco:</strong></p>
-                    
-                    <h4>📄 Páginas Web Informativas</h4>
-                    <p>Sitios que contienen imágenes, videos, enlaces, textos, títulos y botones. Ideal para empresas que necesitan presencia digital informativa. El precio varía según la cantidad de páginas (1-3 páginas vs 5-10 subpáginas).</p>
-                    
-                    <h4>🛒 Tiendas Online (E-commerce)</h4>
-                    <p>Páginas web con funcionalidad de venta de productos (físicos, descargables, servicios). Incluye:</p>
-                    <ul>
-                        <li>• Sistema de gestión de productos completo</li>
-                        <li>• Formularios de envío y procesador de pagos</li>
-                        <li>• Panel administrativo para gestionar catálogo</li>
-                        <li>• Categorías, precios, fotos y descripciones</li>
-                    </ul>
-                    
-                    <h4>🏢 Plataformas Especializadas</h4>
-                    <p>Desarrollos personalizados según tu industria:</p>
-                    <ul>
-                        <li>• <strong>Plataforma de Cursos Online:</strong> Gestión de cursos, estudiantes y contenido</li>
-                        <li>• <strong>Plataforma Hotelera:</strong> Sistema de reservas y gestión de habitaciones</li>
-                        <li>• <strong>Software Empresarial:</strong> Soluciones personalizadas para grandes empresas</li>
-                        <li>• <strong>Portales Gubernamentales:</strong> Sistemas complejos para instituciones públicas</li>
-                    </ul>
-                    
-                    <p><strong>💡 Trabajo Personalizado:</strong> No ofrezco soluciones "enlatadas". Cada proyecto se desarrolla específicamente para tu negocio, con atención exclusiva y asesoramiento completo.</p>
-                    
-                    <p><strong>🤝 Mi Enfoque:</strong> Seré tu aliado estratégico, explicando todo lo que necesitas saber para tomar la mejor decisión para tu negocio, trabajemos juntos o no.</p>
-                `;
-            }
-
-            if (message.includes('precio') || message.includes('costo')) {
-                return `
-                    <p>Los precios varían de <strong>$100.000 a $300.000</strong> dependiendo de las necesidades específicas de tu proyecto.</p>
-                    <p><strong>Condiciones de pago:</strong></p>
-                    <ul>
-                        <li>💰 <strong>50% al iniciar:</strong> Se paga la mitad cuando aceptas la creación del proyecto</li>
-                        <li>✅ <strong>50% al finalizar:</strong> La otra mitad se paga cuando el proyecto esté completo</li>
-                    </ul>
-                    <p>Para evaluar tu proyecto específico, te recomiendo agendar una reunión gratuita por WhatsApp.</p>
-                `;
-            }
-
-            if (message.includes('portfolio') || message.includes('trabajos')) {
-                return `
-                    <p>¡Claro! He desarrollado varios proyectos exitosos:</p>
-                    <ul>
-                        <li>🛒 <strong>E-commerce Salteño:</strong> React + Node.js + MongoDB</li>
-                        <li>🍽️ <strong>Restaurante Gourmet:</strong> Sistema de reservas online</li>
-                        <li>🏥 <strong>Clínica Médica:</strong> Portal con agenda y turnos</li>
-                        <li>💪 <strong>Gimnasio Fitness:</strong> App progresiva con rutinas</li>
-                    </ul>
-                `;
-            }
-
-            if (message.includes('contacto') || message.includes('contactar')) {
-                return `
-                    <p>¡Perfecto! Puedes contactarme de varias formas:</p>
-                    <p>📧 <strong>Email:</strong> luxioage@gmail.com</p>
-                    <p>📱 <strong>WhatsApp:</strong> +54 387 484 8712</p>
-                    <p>Para agendar una reunión gratuita, escribe directamente al WhatsApp.</p>
-                `;
-            }
-
-            if (message.includes('reunion') || message.includes('planificar') || message.includes('planificacion') || message.includes('asesoramiento')) {
-                return `
-                    <p><strong>📅 Reunión de Planificación Personalizada</strong></p>
-                    
-                    <p>¡Excelente decisión! Las reuniones de planificación son <strong>completamente gratuitas</strong> y fundamentales para el éxito de tu proyecto web.</p>
-                    
-                    <h4>🎯 ¿Qué haremos en la reunión?</h4>
-                    <ul>
-                        <li>• <strong>Análisis de tu negocio:</strong> Entender tus objetivos y necesidades específicas</li>
-                        <li>• <strong>Definición del proyecto:</strong> Tipo de desarrollo web más adecuado para ti</li>
-                        <li>• <strong>Funcionalidades requeridas:</strong> Características específicas que necesita tu sitio</li>
-                        <li>• <strong>Cronograma de desarrollo:</strong> Tiempo estimado según la complejidad</li>
-                        <li>• <strong>Presupuesto detallado:</strong> Costo exacto basado en tus necesidades</li>
-                        <li>• <strong>Plan de implementación:</strong> Pasos para llevar tu idea a la realidad</li>
-                    </ul>
-                    
-                    <h4>💡 Beneficios de la reunión:</h4>
-                    <ul>
-                        <li>• <strong>Sin compromiso:</strong> No estás obligado a contratar nada</li>
-                        <li>• <strong>Asesoramiento experto:</strong> Te explico todo lo que necesitas saber</li>
-                        <li>• <strong>Propuesta personalizada:</strong> Solución específica para tu negocio</li>
-                        <li>• <strong>Claridad total:</strong> Entenderás exactamente qué obtendrás</li>
-                    </ul>
-                    
-                    <p><strong>📱 Para agendar:</strong> Escribe al WhatsApp +54 387 484 8712 con "Hola, quiero agendar una reunión de planificación"</p>
-                    
-                    <p><strong>⏰ Duración:</strong> Aproximadamente 45-60 minutos</p>
-                `;
-            }
-
-            if (message.includes('hola') || message.includes('buenos dias')) {
-                return `
-                    <p>¡Hola! 👋 Es un placer saludarte. Soy tu asistente virtual para desarrollo web.</p>
-                    <p>¿En qué puedo ayudarte hoy?</p>
-                `;
-            }
-
-            return `
-                <p>Interesante pregunta. ¿Podrías ser más específico sobre lo que necesitas?</p>
-                <p>Puedo informarte sobre servicios, precios, portfolio o contacto.</p>
-            `;
-        }
-
-        function handleQuickOption(option) {
-            let response = '';
-            
-            switch(option) {
-                case 'servicios':
-                    response = generateResponse('servicios');
-                    break;
-                case 'precios':
-                    response = generateResponse('precios');
-                    break;
-                case 'portfolio':
-                    response = generateResponse('portfolio');
-                    break;
-                case 'contacto':
-                    response = generateResponse('contacto');
-                    break;
-                case 'reunion':
-                    response = generateResponse('reunion');
-                    break;
-            }
-            
-            if (response) {
-                setTimeout(() => {
-                    addMessage(response, 'bot');
-                }, 300);
-            }
-        }
-
         // Enter key en input
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('chat-input').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     sendMessage();
                 }
+            });
+            
+            // Focus en input cuando se abre el chatbot
+            document.getElementById('chat-input').addEventListener('focus', function() {
+                document.getElementById('input-container').style.borderColor = '#667eea';
+                document.getElementById('input-container').style.boxShadow = '0 0 0 3px rgba(102, 126, 234, 0.1)';
+            });
+            
+            document.getElementById('chat-input').addEventListener('blur', function() {
+                document.getElementById('input-container').style.borderColor = 'transparent';
+                document.getElementById('input-container').style.boxShadow = 'none';
             });
         });
     </script>
