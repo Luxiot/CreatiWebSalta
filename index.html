@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreatiWebSalta - Desarrollo Web Profesional</title>
+    <link rel="icon" type="image/png" href="logo-cws.png">
+    <link rel="shortcut icon" type="image/png" href="logo-cws.png">
     <style>
         * {
             margin: 0;
@@ -57,22 +59,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 30px rgba(255,255,255,0.5);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .logo img:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 6px 20px rgba(255,255,255,0.5);
         }
 
         .nav-links {
@@ -632,10 +618,7 @@
 
     <header>
         <nav class="container">
-            <div class="logo">
-                <img src="logo-cws.png" alt="CreatiWebSalta Logo">
-                CreatiWebSalta
-            </div>
+            <div class="logo">CreatiWebSalta</div>
             
             <!-- Menú hamburguesa para móvil -->
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" style="
