@@ -1757,6 +1757,9 @@
                 chatbotState.selectedFeatures = chatbotState.selectedFeatures.filter(f => f !== option);
             }
             
+            // DEBUG: Mostrar en consola las funcionalidades seleccionadas
+            console.log('🔍 DEBUG - Funcionalidades seleccionadas:', chatbotState.selectedFeatures);
+            
             // Actualizar visual del botón
             event.target.style.background = chatbotState.selectedFeatures.includes(option) 
                 ? 'linear-gradient(135deg, #25d366, #128c7e)' 
@@ -1775,6 +1778,8 @@
             // Guardar respuesta del usuario
             if (currentStep.type === 'multi_select') {
                 chatbotState.userData[currentStep.field] = chatbotState.selectedFeatures;
+                console.log('🔍 DEBUG - Guardando funcionalidades en userData:', chatbotState.selectedFeatures);
+                console.log('🔍 DEBUG - userData actualizado:', chatbotState.userData);
             } else {
                 chatbotState.userData[currentStep.field] = message;
             }
@@ -1891,24 +1896,31 @@
         function redirectToWhatsApp() {
             const userData = chatbotState.userData;
             
+            // DEBUG: Mostrar en consola qué datos se están enviando
+            console.log('🔍 DEBUG - Datos del usuario:', userData);
+            console.log('🔍 DEBUG - Funcionalidades seleccionadas:', userData.funcionalidades);
+            console.log('🔍 DEBUG - Funcionalidades como array:', Array.isArray(userData.funcionalidades));
+            
             // Crear mensaje profesional para WhatsApp
             const message = `🚀 **NUEVA CONSULTA DE PROYECTO WEB - CreatiWebSalta**
 
-👤 **Cliente:** ${userData.nombre}
-🏢 **Sector:** ${userData.industria}
-🌐 **Tipo de Proyecto:** ${userData.tipoProyecto}
-💰 **Presupuesto:** ${userData.presupuesto}
-⏰ **Plazo:** ${userData.plazo}
+👤 **Cliente:** ${userData.nombre || 'No especificado'}
+🏢 **Sector:** ${userData.industria || 'No especificado'}
+🌐 **Tipo de Proyecto:** ${userData.tipoProyecto || 'No especificado'}
+💰 **Presupuesto:** ${userData.presupuesto || 'No especificado'}
+⏰ **Plazo:** ${userData.plazo || 'No especificado'}
 
 ⚙️ **Funcionalidades Requeridas:**
-${userData.funcionalidades ? userData.funcionalidades.map(f => `• ${f}`).join('\n') : '• No especificadas'}
+${userData.funcionalidades && Array.isArray(userData.funcionalidades) && userData.funcionalidades.length > 0 
+    ? userData.funcionalidades.map(f => `• ${f}`).join('\n') 
+    : '• No especificadas'}
 
 📝 **Descripción del Proyecto:**
 ${userData.descripcion || 'No especificada'}
 
 🎯 **Solicitud:** Agendar reunión de planificación gratuita para discutir el proyecto en detalle y crear propuesta personalizada.
 
-📱 **Contacto:** ${userData.nombre}
+📱 **Contacto:** ${userData.nombre || 'No especificado'}
 ⏰ **Disponibilidad:** A coordinar según tu agenda
 
 ---
