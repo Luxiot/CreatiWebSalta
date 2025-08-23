@@ -1757,8 +1757,12 @@
                 chatbotState.selectedFeatures = chatbotState.selectedFeatures.filter(f => f !== option);
             }
             
+            // IMPORTANTE: Guardar las funcionalidades en userData inmediatamente
+            chatbotState.userData.funcionalidades = [...chatbotState.selectedFeatures];
+            
             // DEBUG: Mostrar en consola las funcionalidades seleccionadas
             console.log('🔍 DEBUG - Funcionalidades seleccionadas:', chatbotState.selectedFeatures);
+            console.log('🔍 DEBUG - userData.funcionalidades actualizado:', chatbotState.userData.funcionalidades);
             
             // Actualizar visual del botón
             event.target.style.background = chatbotState.selectedFeatures.includes(option) 
@@ -1777,7 +1781,8 @@
             
             // Guardar respuesta del usuario
             if (currentStep.type === 'multi_select') {
-                chatbotState.userData[currentStep.field] = chatbotState.selectedFeatures;
+                // Asegurar que las funcionalidades se guarden correctamente
+                chatbotState.userData[currentStep.field] = [...chatbotState.selectedFeatures];
                 console.log('🔍 DEBUG - Guardando funcionalidades en userData:', chatbotState.selectedFeatures);
                 console.log('🔍 DEBUG - userData actualizado:', chatbotState.userData);
             } else {
