@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cocina Gourmet - Plantilla de Ejemplo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c1810;
+            --secondary-color: #d4af37;
+            --accent-color: #8b4513;
+            --text-dark: #2c1810;
+            --text-light: #6b4f3f;
+            --white: #ffffff;
+            --cream: #faf8f3;
+            --brown-light: #e8dcc0;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 24, 16, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 400;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            height: 400px;
+            background: var(--brown-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 4rem;
+        }
+
+        /* Menu Section */
+        .menu {
+            background: var(--white);
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--secondary-color);
+            background: transparent;
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: var(--cream);
+            border-radius: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--brown-light);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .menu-item-image {
+            height: 200px;
+            background: var(--brown-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 3rem;
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item-title {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .menu-item-price {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .menu-item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-tag {
+            background: var(--white);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 0;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--brown-light);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: var(--brown-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Reservation Section */
+        .reservation {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .reservation-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .reservation-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: var(--white);
+        }
+
+        /* Location Section */
+        .location {
+            background: var(--white);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .location-info p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .location-details {
+            margin-top: 2rem;
+        }
+
+        .location-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-detail i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .location-map {
+            height: 400px;
+            background: var(--brown-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-light);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">La Cocina Gourmet</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#gallery">Galería</a></li>
+                <li><a href="#reservation">Reservas</a></li>
+                <li><a href="#location">Ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <h1>La Cocina Gourmet</h1>
+            <p class="hero-subtitle">Experiencia culinaria excepcional</p>
+            <p class="hero-description">
+                Descubre sabores únicos y platos exquisitos preparados con los 
+                ingredientes más frescos y técnicas culinarias tradicionales.
+            </p>
+            <div class="cta-buttons">
+                <a href="#menu" class="btn btn-primary">Ver Menú</a>
+                <a href="#reservation" class="btn btn-secondary">Hacer Reserva</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nuestra Historia</h3>
+                    <p>
+                        Desde 1995, La Cocina Gourmet ha sido sinónimo de excelencia 
+                        culinaria en la ciudad. Nuestro chef ejecutivo, con más de 
+                        20 años de experiencia en las mejores cocinas del mundo, 
+                        ha creado un menú que combina tradición e innovación.
+                    </p>
+                    <p>
+                        Utilizamos solo ingredientes frescos y de la más alta calidad, 
+                        seleccionados cuidadosamente de proveedores locales y 
+                        productores artesanales. Cada plato es una obra de arte 
+                        que despierta los sentidos y crea momentos inolvidables.
+                    </p>
+                    <p>
+                        Nuestro restaurante ofrece un ambiente elegante y acogedor, 
+                        perfecto para cenas románticas, celebraciones especiales 
+                        o simplemente disfrutar de una experiencia gastronómica única.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-utensils"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Nuestro Menú</h2>
+            <p class="section-subtitle">
+                Explora nuestra selección de platos gourmet preparados con 
+                ingredientes frescos y técnicas culinarias excepcionales.
+            </p>
+            
+            <div class="menu-categories">
+                <button class="category-btn active">Entradas</button>
+                <button class="category-btn">Platos Principales</button>
+                <button class="category-btn">Postres</button>
+                <button class="category-btn">Bebidas</button>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Menu Item 1 -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Ceviche de Langosta</h3>
+                            <span class="menu-item-price">$18</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Langosta fresca marinada en limón, cebolla morada, 
+                            cilantro y ají amarillo. Servido con choclo y camote.
+                        </p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Mariscos</span>
+                            <span class="menu-tag">Fresco</span>
+                            <span class="menu-tag">Sin Gluten</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Pollo a la Brasa</h3>
+                            <span class="menu-item-price">$24</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Pollo marinado en hierbas aromáticas y especias, 
+                            asado a la brasa hasta obtener una piel dorada y 
+                            carne jugosa.
+                        </p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Pollo</span>
+                            <span class="menu-tag">Asado</span>
+                            <span class="menu-tag">Tradicional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-steak"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Lomo Saltado</h3>
+                            <span class="menu-item-price">$28</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Tiras de lomo fino salteadas con cebolla, tomate 
+                            y ají amarillo. Servido con arroz y papas fritas.
+                        </p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Res</span>
+                            <span class="menu-tag">Peruano</span>
+                            <span class="menu-tag">Salteado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Ensalada César</h3>
+                            <span class="menu-item-price">$16</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Lechuga romana, crutones caseros, queso parmesano 
+                            y aderezo César tradicional. Opción con pollo a la plancha.
+                        </p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Vegetariano</span>
+                            <span class="menu-tag">Fresco</span>
+                            <span class="menu-tag">Saludable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 5 -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Tiramisú Casero</h3>
+                            <span class="menu-item-price">$12</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Postre italiano clásico con bizcochos de soletilla 
+                            empapados en café, crema de mascarpone y cacao en polvo.
+                        </p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Postre</span>
+                            <span class="menu-tag">Italiano</span>
+                            <span class="menu-tag">Casero</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 6 -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-wine-glass"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Pisco Sour</h3>
+                            <span class="menu-item-price">$10</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Cóctel nacional peruano preparado con pisco, limón, 
+                            jarabe de goma y clara de huevo. Servido con hielo.
+                        </p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Cóctel</span>
+                            <span class="menu-tag">Peruano</span>
+                            <span class="menu-tag">Tradicional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galería de Imágenes</h2>
+            <p class="section-subtitle">
+                Explora nuestro ambiente y algunos de nuestros platos más 
+                populares a través de nuestra galería de imágenes.
+            </p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-fish"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-steak"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-wine-glass"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-ice-cream"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-leaf"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <h2 class="section-title">Haz tu Reserva</h2>
+            <div class="reservation-content">
+                <p style="margin-bottom: 3rem; font-size: 1.1rem; opacity: 0.9;">
+                    Reserva tu mesa en La Cocina Gourmet y disfruta de una 
+                    experiencia culinaria inolvidable. Aceptamos reservas 
+                    hasta con 24 horas de anticipación.
+                </p>
+                <form class="reservation-form">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Fecha de Reserva</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Hora de Reserva</label>
+                        <select id="time" name="time" required>
+                            <option value="">Selecciona una hora</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Número de Personas</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Selecciona el número</option>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5">5 personas</option>
+                            <option value="6">6 personas</option>
+                            <option value="7+">7+ personas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="special-requests">Solicitudes Especiales</label>
+                        <textarea id="special-requests" name="special-requests" placeholder="Alergias, aniversarios, celebraciones especiales..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Confirmar Reserva</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="container">
+            <h2 class="section-title">Ubicación y Horarios</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Encuéntranos</h3>
+                    <p>
+                        La Cocina Gourmet está ubicada en el corazón del distrito 
+                        gastronómico de la ciudad, fácilmente accesible desde 
+                        cualquier punto de la ciudad.
+                    </p>
+                    <p>
+                        Nuestro restaurante cuenta con estacionamiento gratuito 
+                        para nuestros clientes y está cerca de las principales 
+                        atracciones turísticas.
+                    </p>
+                    <div class="location-details">
+                        <div class="location-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Gastronomía 123, Distrito Gourmet, Ciudad</span>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span>reservas@lacocinagourmet.com</span>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Dom: 12:00 PM - 11:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <i class="fas fa-map"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>La Cocina Gourmet</h3>
+                    <p>
+                        Tu destino gastronómico de confianza para experiencias 
+                        culinarias excepcionales. Ofrecemos la mejor cocina 
+                        gourmet con ingredientes frescos y técnicas tradicionales.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <p>Lunes a Domingo: 12:00 PM - 11:00 PM</p>
+                    <p>Reservas: Hasta 24 horas antes</p>
+                    <p>Capacidad: Hasta 80 personas</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📍 Av. Gastronomía 123, Ciudad</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>✉️ info@lacocinagourmet.com</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-tripadvisor"></i></a>
+            </div>
+            <p>&copy; 2024 La Cocina Gourmet. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
